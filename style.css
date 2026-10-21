@@ -17,7 +17,9 @@ header {
     width: auto;
     max-width: 800px;
     background-color: #7e5b04;
-    border-bottom: black ridge; 
+    border: black ridge; 
+    border-radius: 10px;
+
 }
 #title {
     color: #580b92;
@@ -38,7 +40,9 @@ header {
     padding: 10px;
 }
 
-#about {
+#info {
     color: #f8e19f;
-    width: 340px;
+    width: 540px;
+text-align: center;
+margin: auto;
 }
