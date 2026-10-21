@@ -5,10 +5,7 @@ body {
     font-weight: 300;
     font-style: italic;
     text-align: center;
-}
-
-img {
-    display: inline-block;
+    vertical-align: top;
 }
 
 
@@ -16,6 +13,7 @@ header {
     margin: auto;
     width: auto;
     max-width: 800px;
+    min-height: 120px;
     background-color: #7e5b04;
     border: black ridge; 
     border-radius: 10px;
@@ -34,15 +32,17 @@ header {
 }
 
 .navlink {
-    background-color: antiquewhite;
+    background-color: rgb(211, 211, 211);
     border: black ridge;
     border-radius: 10px;
     padding: 10px;
+    
 }
 
-#info {
+.info {
     color: #f8e19f;
     width: 540px;
-text-align: center;
-margin: auto;
+    text-align: center;
+    margin: auto;
+    background-color: #7e3b04;
 }
