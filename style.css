@@ -1,34 +1,59 @@
 body {
-    background-color: #7b7053;
-    color: #f3f2e6;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+background-image: url('bgr.webp');
+background-size:cover;
+background-position: center;
+background-repeat: repeat;
+}
+
+
+.content {
+    color: rgb(3, 11, 24);
+    font-family: arial, monotype, ms sans serif, sans-serif;
     font-weight: 300;
     font-style: italic;
     text-align: center;
     vertical-align: top;
+    min-width: 440px;
+    max-width: 870px;
+    padding: 30px;
+    height: 100vh;
+    margin: auto;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(12px) hue-rotate(228deg ) sepia(0.2) contrast(1.2) ;
+    
 }
 
 
 header {
+    position: relative;
     margin: auto;
     width: auto;
     max-width: 800px;
     min-height: 120px;
-    background-color: #7e5b04;
-    border: black ridge; 
+    background-color: #8858a3;
+    border: black ridge;
     border-radius: 10px;
-
 }
+
+.nav {
+    position: absolute;
+    bottom: 0;
+    right: 10;
+}
+
 #title {
-    color: #580b92;
+    color: #0b4692;
     font-weight:900;
     font-style: oblique;
     font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 .logo {
     width: 120px;
-
 }
 
 .navlink {
@@ -40,9 +65,11 @@ header {
 }
 
 .info {
-    color: #f8e19f;
-    width: 540px;
+    color: #ffd35b;
     text-align: center;
     margin: auto;
-    background-color: #7e3b04;
+    line-break:break-all;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
 }
