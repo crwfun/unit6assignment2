@@ -1,5 +1,5 @@
 body {
-    background-image: url('bg/bgtile.png');
+    background-image: url('bg/bgtile.webp');
     background-position: center;
     background-color: rgb(73, 73, 73);
     font-family: arial, monotype, ms sans serif, sans-serif;
@@ -9,17 +9,28 @@ body {
     color: #220ba8;
 }
 
+body.dark-mode {
+    background-color: black;
+    background-image: url('bg/bgtiledark.webp');
+    color: gainsboro;
+}
+
+
 img,
 video,
 iframe {
     max-width: 100%;
 }
 
-.container {
+h1, img{
     text-align: center;
+}
+.container {
+    
     max-width: 870px;
     padding: 10px;
     margin: auto;
+    text-align: center;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
@@ -30,17 +41,19 @@ iframe {
 .content1 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
 	 
 }
 .content2 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
 
 }
 .content3 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-    
+    text-align: left;
 }
 
 
@@ -59,7 +72,6 @@ header {
     max-width: 1100px;
 }
 .bar {
-    text-align: center;
     position: relative;
     margin: auto;
     width: auto;
@@ -72,7 +84,7 @@ nav {
     text-align: right;
 }
 
-#title {
+.title {
     color: rgb(0, 0, 0);
     font-weight: 900;
     font-size: 40px;
@@ -87,11 +99,28 @@ nav {
     filter: drop-shadow(2px 4px 6px black);
 }
 
+
+body.dark-mode .title {
+    color: gainsboro;
+    text-shadow:
+        0 0 2px #000000,
+        0 0 8px #000000,
+        0 0 16px #000000,
+        0 0 28px #000000;
+}
+
 .navlink {
     background-color: antiquewhite;
     border: black ridge;
     border-radius: 10px;
     padding: 10px;
+}
+
+.darkmodebutton {
+    position: absolute;
+    background-color: rgb(2, 2, 2);
+    border: black ridge;
+    color: antiquewhite;
 }
 
 .info {
@@ -102,5 +131,5 @@ nav {
     max-width: 600px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    text-align: center;
 }
-
