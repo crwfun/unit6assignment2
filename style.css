@@ -2,12 +2,11 @@ body {
     background-image: url('bg/bgtile.png');
     background-position: center;
     background-color: rgb(73, 73, 73);
-    font-family: 29l;
     font-family: arial, monotype, ms sans serif, sans-serif;
     font-size: 13px;
     font-weight: 300;
     font-style: italic;
-    color: rgb(34, 11, 168);
+    color: #220ba8;
 }
 
 img,
