@@ -2,7 +2,7 @@ body {
     background-image: url('bg/mainbgr.webp');
     background-repeat: space;
     background-size:cover;
-    background-color: rgb(34, 22, 66);
+    background-color: rgb(73, 73, 73);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -31,19 +31,19 @@ iframe {
 .content1 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(12px) hue-rotate(10deg) contrast(0.8) ;
+	backdrop-filter: blur(12px) hue-rotate(15deg) contrast(0.8) ;
     
 }
 .content2 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(12px) hue-rotate(60deg) contrast(0.8) ;
+	backdrop-filter: blur(12px) hue-rotate(250deg) contrast(1.2) ;
     
 }
 .content3 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(12px) hue-rotate(-60deg) contrast(0.8) ;
+	backdrop-filter: blur(12px) hue-rotate(310deg) contrast(1) ;
     
 }
 
@@ -77,13 +77,18 @@ header {
 }
 
 #title {
-    color: #ffd35b;;
+    color: #011947;
     font-weight:900;
     font-style: oblique;
     font-size: 40px;
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
     filter: drop-shadow(2px 4px 6px black);
+text-shadow:
+  0 0 2px #ffffff,
+  0 0 8px rgba(167, 139, 250, 0.45),
+  0 0 16px rgba(124, 58, 237, 0.35),
+  0 0 28px rgba(109, 40, 217, 0.25);
 }
 
 
@@ -92,7 +97,6 @@ header {
     border: black ridge;
     border-radius: 10px;
     padding: 10px;
-    
 }
 
 .info {
