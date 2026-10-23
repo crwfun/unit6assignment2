@@ -1,12 +1,18 @@
 body {
-background-image: url('bgr.webp');
-background-size:cover;
-background-position: center;
-background-repeat: repeat;
+    background-image: url('bg/mainbgr.webp');
+    background-repeat: space;
+    background-size:cover;
+    background-color: rgb(34, 22, 66);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+img,
+video,
+iframe {
+    max-width: 100%;
+}
 
-.content {
+.container {
     color: rgb(3, 11, 24);
     font-family: arial, monotype, ms sans serif, sans-serif;
     font-weight: 300;
@@ -15,12 +21,29 @@ background-repeat: repeat;
     vertical-align: top;
     min-width: 440px;
     max-width: 870px;
-    padding: 30px;
-    height: 100vh;
+    padding: 10px;
     margin: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.content1 {
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(12px) hue-rotate(228deg ) sepia(0.2) contrast(1.2) ;
+	backdrop-filter: blur(12px) hue-rotate(10deg) contrast(0.8) ;
+    
+}
+.content2 {
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(12px) hue-rotate(60deg) contrast(0.8) ;
+    
+}
+.content3 {
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(12px) hue-rotate(-60deg) contrast(0.8) ;
     
 }
 
@@ -29,11 +52,22 @@ header {
     position: relative;
     margin: auto;
     width: auto;
-    max-width: 800px;
-    min-height: 120px;
-    background-color: #8858a3;
+    max-width: 1100px;
+    min-height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
     border: black ridge;
     border-radius: 10px;
+}
+
+.header2 {
+    text-align: center;
+    position: relative;
+    margin: auto;
+    width: auto;
+    width: 100%;
+    height: 20px;
+    color: #ff8738;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav {
@@ -43,7 +77,7 @@ header {
 }
 
 #title {
-    color: #0b4692;
+    color: #ffd35b;;
     font-weight:900;
     font-style: oblique;
     font-size: 40px;
@@ -52,12 +86,9 @@ header {
     filter: drop-shadow(2px 4px 6px black);
 }
 
-.logo {
-    width: 120px;
-}
 
 .navlink {
-    background-color: rgb(211, 211, 211);
+    background-color: antiquewhite;
     border: black ridge;
     border-radius: 10px;
     padding: 10px;
@@ -73,3 +104,4 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
+
