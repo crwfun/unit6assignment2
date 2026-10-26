@@ -6,15 +6,10 @@ body {
     font-size: 13px;
     font-weight: 300;
     font-style: italic;
-    color: #220ba8;
-}
-
-body.dark-mode {
-    background-color: black;
-    background-image: url('bg/bgtiledark.webp');
     color: gainsboro;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
 }
-
 
 img,
 video,
@@ -22,37 +17,32 @@ iframe {
     max-width: 100%;
 }
 
-h1, img{
-    text-align: center;
-}
 .container {
-    
-    max-width: 870px;
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 900px;
     padding: 10px;
+    gap: 10px;
     margin: auto;
-    text-align: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.content {
+	border: 2px ridge #ffd35b;
     border-radius: 12px;
-    backdrop-filter: blur(12px) contrast(1.2) hue-rotate(-330deg);   
+    padding: 8px;
 }
 
+#content1 { 
+	grid-column: 1 / span 2;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
 
-.content1 {
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+#content2 {
     text-align: left;
-	 
 }
-.content2 {
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: left;
-
-}
-.content3 {
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+#content3 {
     text-align: left;
 }
 
@@ -61,12 +51,13 @@ header {
     margin: auto;
     width: 100%;
     min-height: 70px;
-    background-color: rgba(0, 0, 0, 0.2);
+    max-height: 100px;
+    background-color: #00000033;
     border: black ridge;
     border-radius: 10px;
 }
 .headercontent {
-        position: relative;
+    position: relative;
     margin: auto;
     width: auto;
     max-width: 1100px;
@@ -74,7 +65,6 @@ header {
 .bar {
     position: relative;
     margin: auto;
-    width: auto;
     width: 100%;
     color: #ffd35b;
     background-color: rgba(0, 0, 0, 0.5);
@@ -85,7 +75,7 @@ nav {
 }
 
 .title {
-    color: rgb(0, 0, 0);
+    color: rgb(36, 4, 42);
     font-weight: 900;
     font-size: 40px;
     text-align: center;
@@ -100,36 +90,29 @@ nav {
 }
 
 
-body.dark-mode .title {
-    color: gainsboro;
-    text-shadow:
-        0 0 2px #000000,
-        0 0 8px #000000,
-        0 0 16px #000000,
-        0 0 28px #000000;
-}
-
 .navlink {
     background-color: antiquewhite;
     border: black ridge;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.darkmodebutton {
-    position: absolute;
-    background-color: rgb(2, 2, 2);
-    border: black ridge;
-    color: antiquewhite;
+    border-radius: 1px;
+    padding: 3px;
 }
 
 .info {
     color: #ffd35b;
     text-align: center;
     margin: auto;
-    line-break:break-all;
     max-width: 600px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    #content1 {
+        grid-column: 1 / -1;
+    }
 }
