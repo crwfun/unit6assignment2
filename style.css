@@ -1,37 +1,65 @@
 body {
-    background-image: url('bg/bgtile.webp');
-    background-position: center;
     background-color: rgb(73, 73, 73);
     font-family: arial, monotype, ms sans serif, sans-serif;
     font-size: 13px;
     font-weight: 300;
-    font-style: italic;
     color: gainsboro;
     box-sizing: border-box;
-    backdrop-filter: blur(12px);
+    background-color: #292929;
+    background-image:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(151, 150, 151, 0.28),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 10% 65%,
+      rgba(145, 144, 145, 0.16),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 90% 75%,
+      rgba(255, 212, 20, 0.09),
+      transparent 35%
+    );
+    background-attachment: fixed;
 }
-
 img,
 video,
 iframe {
     max-width: 100%;
 }
 
+h1,h2, h3 ,h4 ,h5 ,h6 {
+    background-color: #18003f91;
+    color: gainsboro;
+    font-style: italic;
+    font-variant: small-caps;
+    padding: 3px;
+    width: fit-content;
+}
+
+
 .container {
     display: grid;
     grid-template-columns: auto auto;
     max-width: 900px;
     padding: 10px;
-    gap: 10px;
+    gap: 8px;
     margin: auto;
 }
-
 .content {
-	border: 2px ridge #ffd35b;
     border-radius: 12px;
     padding: 8px;
+    height: fit-content;
+    backdrop-filter: blur(16px) contrast(1.4);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    color: #ffbf84;
 }
-
+.content:hover {
+    color: #ff9d84;
+    transform: translateY(-1px);
+}
 #content1 { 
 	grid-column: 1 / span 2;
     text-align: center;
@@ -45,6 +73,12 @@ iframe {
 #content3 {
     text-align: left;
 }
+#content4 {
+    margin: auto;
+    max-width: 800px;
+    text-align: left;
+    grid-column: 1 / span 2;
+}
 
 
 header {
@@ -53,7 +87,6 @@ header {
     min-height: 70px;
     max-height: 100px;
     background-color: #00000033;
-    border: black ridge;
     border-radius: 10px;
 }
 .headercontent {
@@ -62,6 +95,14 @@ header {
     width: auto;
     max-width: 1100px;
 }
+
+.headercontent img {
+    position: absolute;
+    margin-top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .bar {
     position: relative;
     margin: auto;
@@ -71,8 +112,12 @@ header {
 }
 
 nav {
-    text-align: right;
+    position: absolute;
+    right: 10%;
+    top: 60px;
 }
+
+
 
 .title {
     color: rgb(36, 4, 42);
@@ -91,11 +136,16 @@ nav {
 
 
 .navlink {
-    background-color: antiquewhite;
-    border: black ridge;
-    border-radius: 1px;
+    background-color: #18003f;
+    color: gainsboro;
+    border: 2px #795bff ridge;
     padding: 3px;
 }
+
+.navlink:hover {
+    color: #7701ff;
+}
+
 
 .info {
     color: #ffd35b;
@@ -107,6 +157,32 @@ nav {
     text-align: center;
 }
 
+
+
+.motto {
+    color: goldenrod;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    span {
+        font-weight: 900;
+        display: inline-block;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+}
+
+.motto:hover {
+    color: #7701ff;
+    transform: translateY(-3px);
+}
+
+
+
+
 @media (max-width: 600px) {
     .container {
         grid-template-columns: 1fr;
@@ -115,4 +191,20 @@ nav {
     #content1 {
         grid-column: 1 / -1;
     }
+
+    #content4 {
+        grid-column: 1 / -1;
+    }
+
+    nav {
+        left:auto;
+    }
+
+    .motto {
+        font-size: 30px;
+    }
 }
+
+
+
+
