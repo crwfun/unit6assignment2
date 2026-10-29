@@ -89,7 +89,7 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
 }
 #content4 {
     margin: auto;
-    max-width: 800px;
+    max-width: 650px;
     text-align: left;
     grid-column: 1 / span 2;
 }
@@ -114,6 +114,7 @@ header {
     max-width: 1100px;
 }
 .headercontent img {
+    filter: saturate(0) brightness(2);
     top: 25px;
     position: absolute;
     left: 50%;
@@ -146,7 +147,7 @@ nav {
 
 
 .info {
-    color: var(--primary);
+    color: var(--accent);
     text-align: center;
     margin: auto;
     max-width: 600px;
@@ -158,28 +159,50 @@ nav {
 
 
 .motto {
+    width: fit-content;
+    margin: auto;
     margin-top: 100px;
     color: var(--primary);
     font-size: 40px;
     text-shadow: 2px 2px var(--background);
     font-style: italic;
     text-align: center;
-    animation-name: mottoanimation;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
 }
 
 @keyframes mottoanimation {
     100%, 0% {
+        rotate: 0deg;
+    }
+    33% {
+        rotate: -4deg;
+        scale: 1.1;
         color: var(--accent);
     }
-    50% {
-        color: var(--primary)
+    66% {
+        rotate: 4deg;
+        scale: 0.9;
     }
 }
 
 
-
+@media (max-width: 837px) {
+    .motto {
+        font-size: 30px;
+        margin-top:130px;
+    }
+    header {
+        height: 85px;
+    }
+    nav {
+        margin-top: 88px;
+        float:none;
+    }
+    .headercontent img {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -66px;
+    }
+}
 
 @media (max-width: 600px) {
     .container {
@@ -192,18 +215,6 @@ nav {
     #content4 {
         grid-column: 1 / -1;
     }
-    .motto {
-        font-size: 30px;
-    }
-    nav {
-        margin-top: 70px;
-        float:none;
-    }
-    .headercontent img {
-        left: 50%;
-        transform: translateX(-50%);
-        top: -50px;
-    }
 }
 
 
@@ -211,18 +222,27 @@ nav {
     transition: all 0.5s ease-in-out;
 }
 .navlink:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
-.contentbox:hover, #content1 div:hover{
+.contentbox:hover{
     color: var(--accent);
     transform: translateY(-2px);
 
 }
 .motto:hover {
     transform: translateY(-3px);
-    filter: hue-rotate(150deg);
+    animation-name: mottoanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 .headercontent img:hover {
-    filter: invert();
+    filter: saturate(1);
+    height: 70px;
+    transition: all 1s;
+}
+
+#content1 div:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
 }
