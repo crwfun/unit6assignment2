@@ -1,27 +1,41 @@
+:root {
+  --primary: #bca3ff;
+  --secondary: #8B5BB7;
+  --background: #333333;
+  --text: #E5DED6;
+  --accent: #ff9100;
+  --headerbg: #15101BCC;
+  --boxshadow: #08050B8F;
+}
+
 body {
-    background-color: rgb(73, 73, 73);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
     font-family: arial, monotype, ms sans serif, sans-serif;
     font-size: 13px;
     font-weight: 300;
-    color: gainsboro;
+    color: var(--text);
     box-sizing: border-box;
-    background-color: #292929;
+    background-color: var(--background);
     background-image:
     radial-gradient(
       ellipse at 50% 20%,
-      rgba(151, 150, 151, 0.28),
+      #97969747,
       transparent 45%
     ),
     radial-gradient(
       ellipse at 10% 65%,
-      rgba(145, 144, 145, 0.16),
+      hwb(300 56% 43% / 0.16),
       transparent 38%
     ),
     radial-gradient(
       ellipse at 90% 75%,
-      rgba(255, 212, 20, 0.09),
+      #b1b1b117,
       transparent 35%
     );
+    background-size: cover;
     background-attachment: fixed;
 }
 img,
@@ -30,13 +44,15 @@ iframe {
     max-width: 100%;
 }
 
+
 h1,h2, h3 ,h4 ,h5 ,h6 {
-    background-color: #18003f91;
-    color: gainsboro;
+    background-color: var(--boxshadow);
+    color: var(--text);
     font-style: italic;
     font-variant: small-caps;
     padding: 3px;
     width: fit-content;
+
 }
 
 
@@ -48,17 +64,14 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     gap: 8px;
     margin: auto;
 }
-.content {
+
+.contentbox {
     border-radius: 12px;
     padding: 8px;
     height: fit-content;
-    backdrop-filter: blur(16px) contrast(1.4);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    color: #ffbf84;
-}
-.content:hover {
-    color: #ff9d84;
-    transform: translateY(-1px);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--boxshadow) 0px 22px 70px 4px;
+    color: var(--primary);
 }
 #content1 { 
 	grid-column: 1 / span 2;
@@ -66,6 +79,7 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     max-width: 800px;
     margin: auto;
 }
+
 
 #content2 {
     text-align: left;
@@ -82,77 +96,61 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
 
 
 header {
+    top: 0px;
+    position: fixed;
     margin: auto;
     width: 100%;
-    min-height: 70px;
-    max-height: 100px;
-    background-color: #00000033;
+    height: 75px;
+    background-color: var(--headerbg);
     border-radius: 10px;
+    backdrop-filter: blur(16px);
+    z-index: 1;
 }
+
 .headercontent {
     position: relative;
     margin: auto;
     width: auto;
     max-width: 1100px;
 }
-
 .headercontent img {
+    top: 25px;
     position: absolute;
-    margin-top: 13px;
     left: 50%;
     transform: translateX(-50%);
 }
-
 .bar {
-    position: relative;
+    top: 0px;
+    position: fixed;
     margin: auto;
     width: 100%;
-    color: #ffd35b;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--primary);
+    background-color: var(--boxshadow);
+    z-index: 2;
 }
 
 nav {
-    position: absolute;
-    right: 10%;
-    top: 60px;
+    display: flex;
+    margin-top: 60px;
+    float: right;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
 }
-
-
-
-.title {
-    color: rgb(36, 4, 42);
-    font-weight: 900;
-    font-size: 40px;
-    text-align: center;
-
-    text-shadow:
-        0 0 2px #ffffff,
-        0 0 8px rgba(189, 188, 191, 0.45),
-        0 0 16px rgba(85, 83, 87, 0.35),
-        0 0 28px rgba(150, 150, 151, 0.25);
-
-    filter: drop-shadow(2px 4px 6px black);
-}
-
-
 .navlink {
-    background-color: #18003f;
-    color: gainsboro;
-    border: 2px #795bff ridge;
+    background-color: var(--background);
+    color: var(--text);
+    border: 2px #201524 ridge;
     padding: 3px;
-}
-
-.navlink:hover {
-    color: #7701ff;
 }
 
 
 .info {
-    color: #ffd35b;
+    color: var(--primary);
     text-align: center;
     margin: auto;
     max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--boxshadow);
     border-radius: 20px;
     text-align: center;
 }
@@ -160,24 +158,24 @@ nav {
 
 
 .motto {
-    color: goldenrod;
+    margin-top: 100px;
+    color: var(--primary);
     font-size: 40px;
-    text-shadow: 2px 2px black;
-    margin: auto;
-    text-align: center;
+    text-shadow: 2px 2px var(--background);
     font-style: italic;
-    transition: color 0.3s ease, transform 0.3s ease;
-
-    span {
-        font-weight: 900;
-        display: inline-block;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
+    text-align: center;
+    animation-name: mottoanimation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
 }
 
-.motto:hover {
-    color: #7701ff;
-    transform: translateY(-3px);
+@keyframes mottoanimation {
+    100%, 0% {
+        color: var(--accent);
+    }
+    50% {
+        color: var(--primary)
+    }
 }
 
 
@@ -187,7 +185,6 @@ nav {
     .container {
         grid-template-columns: 1fr;
     }
-
     #content1 {
         grid-column: 1 / -1;
     }
@@ -195,16 +192,37 @@ nav {
     #content4 {
         grid-column: 1 / -1;
     }
-
-    nav {
-        left:auto;
-    }
-
     .motto {
         font-size: 30px;
+    }
+    nav {
+        margin-top: 70px;
+        float:none;
+    }
+    .headercontent img {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
     }
 }
 
 
+:hover {
+    transition: all 0.5s ease-in-out;
+}
+.navlink:hover {
+    color: var(--primary);
+}
+.contentbox:hover, #content1 div:hover{
+    color: var(--accent);
+    transform: translateY(-2px);
 
+}
+.motto:hover {
+    transform: translateY(-3px);
+    filter: hue-rotate(150deg);
+}
 
+.headercontent img:hover {
+    filter: invert();
+}
