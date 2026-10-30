@@ -1,13 +1,12 @@
 :root {
   --primary: #bca3ff;
-  --secondary: #8B5BB7;
+  --secondary: #5b61b7;
   --background: #333333;
   --text: #E5DED6;
   --accent: #ff9100;
   --headerbg: #15101BCC;
   --boxshadow: #08050B8F;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -38,13 +37,12 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 img,
 video,
 iframe {
     max-width: 100%;
 }
-
-
 h1,h2, h3 ,h4 ,h5 ,h6 {
     background-color: var(--boxshadow);
     color: var(--text);
@@ -54,8 +52,6 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     width: fit-content;
 
 }
-
-
 .container {
     display: grid;
     grid-template-columns: auto auto;
@@ -64,23 +60,19 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     gap: 8px;
     margin: auto;
 }
-
 .contentbox {
     border-radius: 12px;
     padding: 8px;
     height: fit-content;
     backdrop-filter: blur(16px);
     box-shadow: var(--boxshadow) 0px 22px 70px 4px;
-    color: var(--primary);
+    color: var(--text);
 }
 #content1 { 
 	grid-column: 1 / span 2;
     text-align: center;
-    max-width: 800px;
     margin: auto;
 }
-
-
 #content2 {
     text-align: left;
 }
@@ -93,7 +85,48 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     text-align: left;
     grid-column: 1 / span 2;
 }
+main {
+    margin-top: 0px;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: url(hero.webp);
+    background-size: cover;
+    background-repeat: repeat;
+    height: 400px;
+    width: 100%;
+    margin: auto;
+    
+    box-shadow: inset 50px 50px 80px 80px var(--background);
+}
+.motto {
+    margin: auto;
+    text-align: center;
+    color: var(--primary);
+    font-size: 40px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    
 
+    span {
+        font-weight: 900;
+        font-size: 50px;
+    }
+}
+.herobutton {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    margin: 15px auto 0;
+    background-color: var(--background);
+    color: var(--text);
+    border: 2px #201524 ridge;
+    padding: 8px 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
 
 header {
     top: 0px;
@@ -106,7 +139,6 @@ header {
     backdrop-filter: blur(16px);
     z-index: 1;
 }
-
 .headercontent {
     position: relative;
     margin: auto;
@@ -129,7 +161,6 @@ header {
     background-color: var(--boxshadow);
     z-index: 2;
 }
-
 nav {
     display: flex;
     margin-top: 60px;
@@ -144,10 +175,8 @@ nav {
     border: 2px #201524 ridge;
     padding: 3px;
 }
-
-
 .info {
-    color: var(--accent);
+    color: var(--primary);
     text-align: center;
     margin: auto;
     max-width: 600px;
@@ -155,40 +184,12 @@ nav {
     border-radius: 20px;
     text-align: center;
 }
-
-
-
-.motto {
-    width: fit-content;
-    margin: auto;
-    margin-top: 100px;
-    color: var(--primary);
-    font-size: 40px;
-    text-shadow: 2px 2px var(--background);
-    font-style: italic;
-    text-align: center;
+#applynow {
+    font-weight: 900;
 }
-
-@keyframes mottoanimation {
-    100%, 0% {
-        rotate: 0deg;
-    }
-    33% {
-        rotate: -4deg;
-        scale: 1.1;
-        color: var(--accent);
-    }
-    66% {
-        rotate: 4deg;
-        scale: 0.9;
-    }
-}
-
-
 @media (max-width: 837px) {
     .motto {
         font-size: 30px;
-        margin-top:130px;
     }
     header {
         height: 85px;
@@ -203,7 +204,6 @@ nav {
         top: -66px;
     }
 }
-
 @media (max-width: 600px) {
     .container {
         grid-template-columns: 1fr;
@@ -216,18 +216,25 @@ nav {
         grid-column: 1 / -1;
     }
 }
-
-
 :hover {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
-.navlink:hover {
+.navlink:hover{
     color: var(--accent);
 }
-.contentbox:hover{
+.contentbox:hover, #content1 div:hover{
     color: var(--accent);
     transform: translateY(-2px);
+    h1,h2, h3 ,h4 ,h5 ,h6 {
+        transform: scale(1.05);
+        transition: all 0.5s ease-in-out;
+    }
 
+}
+.herobutton:hover {
+    font-size: 2px;
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 .motto:hover {
     transform: translateY(-3px);
@@ -235,14 +242,23 @@ nav {
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
-
+@keyframes mottoanimation {
+    100%, 0% {
+        rotate: 0deg;
+        
+    }
+    33% {
+        rotate: -4deg;
+        scale: 1.1;
+        color: var(--accent);
+    }
+    66% {
+        rotate: 4deg;
+        scale: 0.9;
+    }
+}
 .headercontent img:hover {
     filter: saturate(1);
     height: 70px;
     transition: all 1s;
-}
-
-#content1 div:hover {
-    color: var(--primary);
-    transform: translateY(-2px);
 }
