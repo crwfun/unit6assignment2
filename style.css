@@ -203,6 +203,9 @@ nav {
         transform: translateX(-50%);
         top: -66px;
     }
+    .motto {
+        margin-top: 55px;
+    }
 }
 @media (max-width: 600px) {
     .container {
