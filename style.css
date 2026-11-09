@@ -2,11 +2,12 @@
   --primary: #bca3ff;
   --background: #333333;
   --text: #E5DED6;
-  --accent: #ff9100;
+  --accent: #ff9900;
   --headerbg: #15101BCC;
   --boxshadow: #08050B8F;
 }
 body {
+    text-align: center;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -63,11 +64,19 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
 
 }
 .container {
+    text-align: center;
     display: grid;
     grid-template-columns: auto auto;
     max-width: 900px;
     padding: 10px;
     gap: 8px;
+    margin: auto;
+}
+.staffcontainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 900px;
+    gap: 16px;
     margin: auto;
 }
 .contentbox {
@@ -95,6 +104,40 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     text-align: left;
     grid-column: 1 / span 2;
 }
+#staffintro {
+    margin: auto;
+    max-width: 650px;
+    text-align: left;
+    grid-column: 1 / span 3;
+}
+.staffmember {
+    background-size: cover;
+    width: 95%;
+    height: 400px;
+    border-radius: 12px;
+    filter: brightness(0.8);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--boxshadow) 0px 22px 70px 4px;
+    color: var(--text);
+}
+.stafftext {
+    backdrop-filter: blur(12px) invert(1);
+}
+#staff1 {
+    background-image: url(staffimgs/DB1.jpg);
+}
+#staff2 {
+    background-image: url(staffimgs/DB2.jpg);
+}
+#staff3 {
+    background-image: url(staffimgs/DB3.jpg);
+}
+#staff4 {
+    background-image: url(staffimgs/DB18.jpg);
+}
+#staff5 {
+    background-image: url(staffimgs/DB10.jpg);
+}
 main {
     margin-top: 0px;
 }
@@ -118,12 +161,6 @@ main {
     font-size: 40px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: italic;
-    
-
-    span {
-        font-weight: 900;
-        font-size: 50px;
-    }
 }
 .herobutton {
     display: block;
@@ -185,6 +222,7 @@ nav {
     border: 2px #201524 ridge;
     padding: 3px;
 }
+
 .info {
     color: var(--primary);
     text-align: center;
@@ -194,10 +232,17 @@ nav {
     border-radius: 20px;
     text-align: center;
 }
+.headerspace {
+    margin-top: 100px;
+}
+
+.staffimage {
+    width: 200px;
+}
 #applynow {
     font-weight: 900;
 }
-@media (max-width: 837px) {
+@media (max-width: 960px) {
     .motto {
         font-size: 30px;
     }
@@ -216,6 +261,10 @@ nav {
     .motto {
         margin-top: 55px;
     }
+
+    .headerspace {
+        margin-top: 140px;
+    }
 }
 @media (max-width: 600px) {
     .container {
@@ -228,9 +277,26 @@ nav {
     #content4 {
         grid-column: 1 / -1;
     }
+    .staffcontainer {
+        grid-template-columns: auto;
+        width: 90%;
+    }
+    .staffcontainer div {
+        margin: auto;
+        max-width: 300px;
+        grid-column: 1 / -1;
+    }
+    #staffintro {
+        grid-column: 1 / -1;
+        max-width: 400px;
+    }
+    .page-grid,
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
 }
 :hover {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in;
 }
 .navlink:hover{
     color: var(--accent);
@@ -255,6 +321,12 @@ nav {
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
+.staffmember:hover {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+
 @keyframes mottoanimation {
     100%, 0% {
         rotate: 0deg;
