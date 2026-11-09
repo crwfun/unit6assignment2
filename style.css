@@ -124,19 +124,19 @@ h1,h2, h3 ,h4 ,h5 ,h6 {
     backdrop-filter: blur(12px) invert(1);
 }
 #staff1 {
-    background-image: url(staffimgs/DB1.jpg);
+    background-image: url(staffimgs/DB1-1.webp);
 }
 #staff2 {
-    background-image: url(staffimgs/DB2.jpg);
+    background-image: url(staffimgs/DB2-1.webp);
 }
 #staff3 {
-    background-image: url(staffimgs/DB3.jpg);
+    background-image: url(staffimgs/DB3-1.webp);
 }
 #staff4 {
-    background-image: url(staffimgs/DB18.jpg);
+    background-image: url(staffimgs/DB18-1.webp);
 }
 #staff5 {
-    background-image: url(staffimgs/DB10.jpg);
+    background-image: url(staffimgs/DB10-1.webp);
 }
 main {
     margin-top: 0px;
